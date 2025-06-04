@@ -98,7 +98,6 @@ class MappingRetrieveByPatientView(APIView):
     """
     GET /api/mappings/<patient_id>/ - Get all doctors assigned to a specific patient
     """
-    print("HELLO")
     permission_classes = [IsAuthenticated]
 
     def get(self, request, patient_id):
@@ -117,7 +116,6 @@ class MappingDestroyView(generics.DestroyAPIView):
     lookup_field = 'pk'
 
     def delete(self, request, *args, **kwargs):
-        print("HEllo Rohan")
         instance = self.get_object()
         self.perform_destroy(instance)
         return Response({"message": "Mapping deleted successfully."}, status=status.HTTP_200_OK)
