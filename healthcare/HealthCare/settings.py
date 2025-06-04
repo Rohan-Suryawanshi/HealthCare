@@ -80,18 +80,20 @@ WSGI_APPLICATION = 'HealthCare.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 from decouple import config
+from urllib.parse import urlparse
+
+tmpPostgres = urlparse(config('DATABASE_URL'))
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': tmpPostgres.path.replace('/', ''),
+        'USER': tmpPostgres.username,
+        'PASSWORD': tmpPostgres.password,
+        'HOST': tmpPostgres.hostname,
+        'PORT': 5432,
     }
 }
-
 
 
 
