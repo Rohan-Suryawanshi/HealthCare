@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+
+# Environment
+.env
+*.env
+.env.*
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.venv.bak/
+
+# Django specific
+db.sqlite3
+*.log
+media/
+staticfiles/
+static/
+*.pot
+*.pyc
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Pytest cache
+.pytest_cache/
+
+# Migrations (optional: keep if you want to track them)
+**/migrations/*.py[cod]
+**/migrations/__pycache__/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# Others
+*.sqlite3
+*.db
+
+# JetBrains (PyCharm etc.)
+.idea/
